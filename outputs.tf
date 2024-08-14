@@ -14,3 +14,8 @@ output "log_stream_arn" {
   value       = aws_cloudwatch_log_stream.log_stream.arn
   description = "The Amazon Resource Name (ARN) specifying the log stream."
 }
+
+output "log_stream_name" {
+  value       = aws_cloudwatch_log_stream.log_stream.name
+  description = "The name of the log stream."
+}

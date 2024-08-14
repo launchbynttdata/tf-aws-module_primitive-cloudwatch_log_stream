@@ -140,4 +140,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_log_stream_arn"></a> [log\_stream\_arn](#output\_log\_stream\_arn) | The Amazon Resource Name (ARN) specifying the log stream. |
+| <a name="output_log_stream_name"></a> [log\_stream\_name](#output\_log\_stream\_name) | The name of the log stream. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

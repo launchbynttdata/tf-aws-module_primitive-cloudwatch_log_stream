@@ -10,6 +10,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "log_group_arn" {
-  value = module.cloudwatch_log_group.log_group_arn
+output "log_stream_arn" {
+  value = module.cloudwatch_log_stream.log_stream_arn
+}
+
+output "log_stream_name" {
+  value = module.cloudwatch_log_stream.log_stream_name
 }
