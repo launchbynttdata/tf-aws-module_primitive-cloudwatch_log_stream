@@ -13,8 +13,8 @@ No requirements.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | ../.. | n/a |
-| <a name="module_firehose_delivery_stream"></a> [firehose\_delivery\_stream](#module\_firehose\_delivery\_stream) | git::https://github.com/nexient-llc/tf-aws-module-firehose_delivery_stream | 0.1.0 |
-| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | git::https://github.com/nexient-llc/tf-aws-wrapper_module-s3_bucket | 0.1.1 |
+| <a name="module_firehose_delivery_stream"></a> [firehose\_delivery\_stream](#module\_firehose\_delivery\_stream) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-firehose_delivery_stream | 0.1.0 |
+| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | git::https://github.com/launchbynttdata/tf-aws-module_collection-s3_bucket | 0.1.1 |
 
 ## Resources
 
@@ -54,8 +54,8 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_cloudwatch_log_stream"></a> [cloudwatch\_log\_stream](#module\_cloudwatch\_log\_stream) | ../.. | n/a |
-| <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | git::https://github.com/nexient-llc/tf-aws-module-cloudwatch_log_group | 0.1.0 |
-| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/nexient-llc/tf-module-resource_name.git | 0.1.0 |
+| <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_log_group/aws | ~> 1.0 |
+| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | github.com/launchbynttdata/tf-launch-module_library-resource_name.git | 1.0.1 |
 
 ## Resources
 
@@ -70,7 +70,7 @@ No resources.
 | <a name="input_environment_number"></a> [environment\_number](#input\_environment\_number) | The environment count for the respective environment. Defaults to 000. Increments in value of 1 | `string` | `"000"` | no |
 | <a name="input_resource_number"></a> [resource\_number](#input\_resource\_number) | The resource count for the respective resource. Defaults to 000. Increments in value of 1 | `string` | `"000"` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region in which the infra needs to be provisioned | `string` | `"us-east-2"` | no |
-| <a name="input_resource_names_map"></a> [resource\_names\_map](#input\_resource\_names\_map) | A map of key to resource\_name that will be used by tf-module-resource\_name to generate resource names | <pre>map(object(<br>    {<br>      name       = string<br>      max_length = optional(number, 60)<br>    }<br>  ))</pre> | <pre>{<br>  "log_group": {<br>    "max_length": 63,<br>    "name": "lg"<br>  },<br>  "log_stream": {<br>    "max_length": 63,<br>    "name": "ls"<br>  }<br>}</pre> | no |
+| <a name="input_resource_names_map"></a> [resource\_names\_map](#input\_resource\_names\_map) | A map of key to resource\_name that will be used by tf-launch-module\_library-resource\_name to generate resource names | <pre>map(object(<br>    {<br>      name       = string<br>      max_length = optional(number, 60)<br>    }<br>  ))</pre> | <pre>{<br>  "log_group": {<br>    "max_length": 63,<br>    "name": "lg"<br>  },<br>  "log_stream": {<br>    "max_length": 63,<br>    "name": "ls"<br>  }<br>}</pre> | no |
 
 ## Outputs
 

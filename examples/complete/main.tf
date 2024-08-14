@@ -22,21 +22,23 @@ module "cloudwatch_log_stream" {
 }
 
 module "cloudwatch_log_group" {
-  source = "git::https://github.com/nexient-llc/tf-aws-module-cloudwatch_log_group?ref=0.1.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_log_group/aws"
+  version = "~> 1.0"
 
   name = module.resource_names["log_group"].standard
 }
 
 module "resource_names" {
-  source = "git::https://github.com/nexient-llc/tf-module-resource_name.git?ref=0.1.0"
+  source = "github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.1"
 
   for_each = var.resource_names_map
 
-  logical_product_name = var.naming_prefix
-  region               = join("", split("-", var.region))
-  class_env            = var.environment
-  cloud_resource_type  = each.value.name
-  instance_env         = var.environment_number
-  instance_resource    = var.resource_number
-  maximum_length       = each.value.max_length
+  logical_product_family  = "terratest"
+  logical_product_service = "cloudwatch"
+  region                  = join("", split("-", var.region))
+  class_env               = var.environment
+  cloud_resource_type     = each.value.name
+  instance_env            = var.environment_number
+  instance_resource       = var.resource_number
+  maximum_length          = each.value.max_length
 }
