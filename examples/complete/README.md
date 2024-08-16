@@ -77,4 +77,5 @@ No resources.
 |------|-------------|
 | <a name="output_log_stream_arn"></a> [log\_stream\_arn](#output\_log\_stream\_arn) | n/a |
 | <a name="output_log_stream_name"></a> [log\_stream\_name](#output\_log\_stream\_name) | n/a |
+| <a name="output_log_group_arn"></a> [log\_group\_arn](#output\_log\_group\_arn) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
