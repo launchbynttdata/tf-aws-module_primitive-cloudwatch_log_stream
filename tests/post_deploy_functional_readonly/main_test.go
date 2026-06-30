@@ -20,5 +20,5 @@ func TestLogGroupModule(t *testing.T) {
 		SetTestConfigFileName(infraTFVarFileNameDefault).
 		Build()
 
-	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestLogStream)
+	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestComposableComplete)
 }
