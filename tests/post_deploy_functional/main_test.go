@@ -20,5 +20,5 @@ func TestLogStreamModule(t *testing.T) {
 		SetTestConfigFileName(infraTFVarFileNameDefault).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestLogStream)
+	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestComposableComplete)
 }

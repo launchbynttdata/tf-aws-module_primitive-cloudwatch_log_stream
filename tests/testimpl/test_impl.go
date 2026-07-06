@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestLogStream(t *testing.T, ctx types.TestContext) {
+func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	cloudwatchClient := cloudwatchlogs.NewFromConfig(GetAWSConfig(t))
 	streamName := terraform.Output(t, ctx.TerratestTerraformOptions(), "log_stream_name")
 	streamArn := terraform.Output(t, ctx.TerratestTerraformOptions(), "log_stream_arn")
