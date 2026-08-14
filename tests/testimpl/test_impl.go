@@ -14,9 +14,9 @@ import (
 
 func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	cloudwatchClient := cloudwatchlogs.NewFromConfig(GetAWSConfig(t))
-	streamName := terraform.Output(t, ctx.TerratestTerraformOptions(), "log_stream_name")
-	streamArn := terraform.Output(t, ctx.TerratestTerraformOptions(), "log_stream_arn")
-	groupArn := terraform.Output(t, ctx.TerratestTerraformOptions(), "log_group_arn")
+	streamName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "log_stream_name")
+	streamArn := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "log_stream_arn")
+	groupArn := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "log_group_arn")
 
 	output, err := cloudwatchClient.DescribeLogStreams(context.TODO(), &cloudwatchlogs.DescribeLogStreamsInput{
 		LogStreamNamePrefix: &streamName,
